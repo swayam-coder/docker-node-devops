@@ -1,0 +1,10 @@
+**/node_modules 
+build
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
+ignorefile.txt
+.eslintrc
+.dockerignore
+rest.http

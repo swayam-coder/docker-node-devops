@@ -1,0 +1,6 @@
+POST http://localhost:3000/auth/api/register
+
+{
+	"username": "swayam",
+	"password": "password"
+}

@@ -1,0 +1,27 @@
+version: "3"
+services: 
+  node_app:
+    container_name: node_microservices
+    restart: always
+    ports:
+      - 3000:5000
+      - 2000:5000
+    environment:
+      - PORT=3000
+      - PORT2=2000
+    depends_on:  # this will make mongo container start before node container
+      - mongodb
+  mongodb: # container name
+    image: mongo
+    container_name: mongodb_container
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb-volume:/data/db  # named volume
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=swayam
+      - MONGO_INITDB_ROOT_PASSWORD=password
+  redis:
+    image: redis
+volumes:
+  mongodb-volume:
